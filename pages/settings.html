@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=800">
+  <title>Settings - Retro Browser</title>
+  <link rel="stylesheet" href="../styles/settings.css">
+</head>
+<body>
+  <div class="browser">
+    <!-- Title Bar -->
+    <div class="title-bar">
+      <span>Settings</span>
+      <div class="buttons">
+        <button>
+            <img src="../ui icons/_.svg" alt="Minimize">
+        </button>
+        <button>
+            <img src="../ui icons/[].svg" alt="Restore">
+        </button>
+        <button>
+            <img src="../ui icons/x.svg" alt="X">
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu Bar -->
+    <div class="menu-bar">
+      <button onclick="window.location.href='../index.html'">Home</button>
+      <button>Edit</button>
+      <button>View</button>
+      <button>Favorites</button>
+      <button>Help</button>
+      <button>Settings</button>
+    </div>
+
+    <!-- Address Bar -->
+    <div class="address-bar">
+      <button>&larr;</button>
+      <button>&rarr;</button>
+      <input type="text" placeholder="Address" style="flex: 1;">
+    </div>
+
+    <!-- Content Area -->
+    <div class="content">
+      <div class="main-content">
+        <h1>Settings</h1>
+        <p>Here you can configure your retro browser.</p>
+        <form>
+          <label for="theme">Theme:</label>
+          <select id="theme" name="theme">
+            <option value="retro">Retro</option>
+            <option value="modern">Modern</option>
+          </select>
+          <br>
+          <label for="font-size">Font Size:</label>
+          <input type="number" id="font-size" name="font-size" min="10" max="20" value="13">
+          <br>
+          <button type="submit">Save</button>
+        </form>
+      </div>
+      <!-- Scroll Bar -->
+      <div class="scroll-bar">
+        <button class="scroll-arrow up"></button>
+        <div class="scroll-track">
+          <div class="scroll-thumb"></div>
+        </div>
+        <button class="scroll-arrow down"></button>
+      </div>
+    </div>
+
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <span>Settings page</span>
+    </div>
+  </div>
+
+  <!-- Add the JavaScript for scroll functionality -->
+  <script>
+    // Copy the same scroll functionality from index.html
+    // (You can move this to a separate JS file if you want to reuse it)
+  </script>
+</body>
+</html>
