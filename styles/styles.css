@@ -125,10 +125,13 @@ body {
     /* color: white; */
 }
 
-/* Maintain underline on hover */
-/* .menu-bar button:hover::first-letter {
-    text-decoration-color: white;
-} */
+.menu-bar button:active{
+  box-shadow:
+  inset 1px 1px #0a0a0a,
+  inset -1px -1px #ffffff;
+
+}
+
   
   /* Address Bar */
   .address-bar {
@@ -314,7 +317,7 @@ body {
 .time {
   margin-left: auto; /* Push the time to the right */
   padding: 0 5px; /* Optional: Add some padding */
-  font-weight: bold; /* Optional: Make the time bold */
+  /* font-weight: bold; */
 }
 
 /* Status bar text styling */
@@ -340,3 +343,75 @@ body {
         );
     border-left: 2px solid #ffffff;
 } */
+
+
+/* Popup Container */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  z-index: 1000; /* Ensure it's on top */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+/* Popup Content */
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Adjust width as needed */
+  max-width: 600px; /* Maximum width */
+  border-radius: 10px;
+  position: relative;
+}
+
+/* Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: black;
+}
+
+
+/* Container for all image-items */
+.image-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping to the next row */
+  justify-content: flex-start; /* Align items to the start */
+  gap: 10px; /* Space between items */
+  width: 100%; /* Fills the width of the content window */
+}
+
+/* Each image-text pair */
+.image-item {
+  flex: 1 1 auto; /* Allow items to grow and shrink */
+  text-align: center; /* Centers the text under the image */
+  min-width: 50px; 
+  max-width: 60px; 
+  box-sizing: border-box; /* Include padding and border in the width */
+  margin: 20px 20px; /* Space between rows */
+}
+
+/* Fixed size for images */
+.image-item img {
+  width: 100%; /* Make the image fill the container */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+/* Styling for the text */
+.image-item p {
+  margin-top: 10px; /* Space between image and text */
+  font-size: 16px; /* Adjust as needed */
+}

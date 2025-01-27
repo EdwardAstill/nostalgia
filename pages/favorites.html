@@ -5,7 +5,7 @@
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
   <meta name="viewport" content="width=800">
   <title>Retro Browser Layout</title>
-  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
   <div class="browser">
@@ -14,13 +14,13 @@
       <span>Blank Browser Page</span>
       <div class="buttons">
         <button>
-            <img src="ui icons/_.svg" alt="Minimize">
+            <img src="../ui icons/_.svg" alt="Minimize">
         </button>
         <button>
-            <img src="ui icons/[].svg" alt="Restore">
+            <img src="../ui icons/[].svg" alt="Restore">
         </button>
         <button>
-            <img src="ui icons/x.svg" alt="X">
+            <img src="../ui icons/x.svg" alt="X">
         </button>
       </div>
     </div>
@@ -30,7 +30,7 @@
       <button>File</button>
       <button>Edit</button>
       <button>View</button>
-      <button onclick="window.location.href='pages/favorites.html'">Favorites</button>
+      <button>Favorites</button>
       <button>Help</button>
       <button onclick="window.location.href='pages/settings.html'">Settings</button>
     </div>
@@ -45,45 +45,39 @@
     <!-- Content Area -->
     <div class="content">
       <div class="main-content">
-        <h1>Welcome to Retro Browser</h1>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <!-- Repeated content to create scroll -->
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
-        <p>This is a simple retro browser layout created using HTML and CSS.</p>
+        <div class="image-container">
+            <!-- Image/Text Pair 1 -->
+            <div class="image-item" onclick="openPopup('popup1')">
+                <img src="../ui icons/folder.png" alt="Image 1">
+                <p>image 1</p>
+            </div>
+            <!-- Image/Text Pair 2 -->
+            <div class="image-item" onclick="openPopup('popup2')">
+                <img src="../ui icons/folder.png" alt="Image 2">
+                <p>image 2</p>
+            </div>
+            <!-- Add more image-item divs as needed -->
+        </div>
+        
+        <!-- Popup Containers -->
+        <div id="popup1" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup('popup1')">&times;</span>
+                <h2>Popup Title 1</h2>
+                <p>This is the content for the first popup.</p>
+            </div>
+        </div>
+        
+        <div id="popup2" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup('popup2')">&times;</span>
+                <h2>Popup Title 2</h2>
+                <p>This is the content for the second popup.</p>
+            </div>
+        </div>
+        <!-- Add more popups as needed -->
+
+
       </div>
       <!-- Updated Scroll Bar Structure -->
       <div class="scroll-bar">
@@ -199,8 +193,6 @@
   setInterval(updateTime, 1000);
 
 
-
-
   
   // Back button functionality
   document.getElementById('back-button').addEventListener('click', () => {
@@ -211,6 +203,26 @@
   document.getElementById('forward-button').addEventListener('click', () => {
     history.forward(); // Go forward in history
   });
+
+
+// Function to open the popup
+function openPopup(popupId) {
+    document.getElementById(popupId).style.display = "flex"; /* Use flex to center the popup */
+}
+
+// Function to close the popup
+function closePopup(popupId) {
+    document.getElementById(popupId).style.display = "none";
+}
+
+// Close the popup if the user clicks outside the popup content
+window.onclick = function(event) {
+    if (event.target.classList.contains('popup')) {
+        event.target.style.display = "none";
+    }
+};
+
+
 
   </script>
 </body>
